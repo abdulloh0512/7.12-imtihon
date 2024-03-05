@@ -1,9 +1,8 @@
-import { useEffect } from "react"
-import styled from "styled-components"
-import { Close } from "../icons/index"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
-import "@splidejs/react-splide/css"
-import { useGlobalContext } from "../context/context"
+import styled from "styled-components";
+import { Close } from "../icons/index";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import { useGlobalContext } from "../context/context";
 
 const ImageOverlay = ({
   productImages,
@@ -13,7 +12,7 @@ const ImageOverlay = ({
   imageIndex,
   setImageIndex,
 }) => {
-  const { hideImageOverlay } = useGlobalContext()
+  const { hideImageOverlay } = useGlobalContext();
 
   return (
     <OverlayWrapper>
@@ -25,19 +24,19 @@ const ImageOverlay = ({
           options={{ autoWidth: false, pagination: false, type: "loop" }}
           ref={overlayRef}
           onMove={() => {
-            setImageIndex(overlayRef.current.splide.index)
-            carouselRef.current.go(overlayRef.current.splide.index)
+            setImageIndex(overlayRef.current.splide.index);
+            carouselRef.current.go(overlayRef.current.splide.index);
           }}
         >
           {productImages.map((image, idx) => {
-            const { url, alt } = image
+            const { url, alt } = image;
             return (
               <SplideSlide key={idx}>
                 <button>
                   <img src={url} alt={alt} />
                 </button>
               </SplideSlide>
-            )
+            );
           })}
         </Splide>
         <div className="thumbnails">
@@ -46,20 +45,20 @@ const ImageOverlay = ({
               <button
                 className={`thumb-btn ${imageIndex === idx ? "active" : ""}`}
                 onClick={() => {
-                  overlayRef.current.go(idx)
-                  carouselRef.current.go(idx)
+                  overlayRef.current.go(idx);
+                  carouselRef.current.go(idx);
                 }}
                 key={idx}
               >
                 <img src={thumbnail.url} alt={thumbnail.alt} />
               </button>
-            )
+            );
           })}
         </div>
       </div>
     </OverlayWrapper>
-  )
-}
+  );
+};
 
 const OverlayWrapper = styled.section`
   position: absolute;
@@ -68,7 +67,7 @@ const OverlayWrapper = styled.section`
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background-color: hsl(var(--black) / 0.7);
+  background-color: black / 0.7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +101,7 @@ const OverlayWrapper = styled.section`
     }
 
     .splide__arrow {
-      background-color: hsl(var(--white));
+      background-color: white;
       height: 5.6rem;
       width: 5.6rem;
     }
@@ -128,7 +127,7 @@ const OverlayWrapper = styled.section`
       }
 
       &:hover svg path {
-        fill: hsl(var(--orange));
+        fill: orange;
       }
     }
 
@@ -146,7 +145,7 @@ const OverlayWrapper = styled.section`
           img {
             opacity: 0.5;
           }
-          outline: 0.2rem solid hsl(var(--orange));
+          outline: 0.2rem solid orange;
         }
 
         &:hover {
@@ -162,6 +161,6 @@ const OverlayWrapper = styled.section`
       }
     }
   }
-`
+`;
 
-export default ImageOverlay
+export default ImageOverlay;

@@ -1,13 +1,13 @@
-import styled from "styled-components"
-import { Logo, Menu, Cart } from "../icons/index"
-import { avatar } from "../assets/imagedata"
-import FloatingCart from "../components/FloatingCart"
-import { useGlobalContext } from "../context/context"
+import styled from "styled-components";
+import { Logo, Menu, Cart } from "../icons/index";
+import { avatar } from "../assets/imagedata";
+import FloatingCart from "../components/FloatingCart";
+import { useGlobalContext } from "../context/context";
 
-const navLinks = ["collections", "men", "women", "about", "contact"]
+const navLinks = ["collections", "men", "women", "about", "contact"];
 
 const Navigator = () => {
-  const { showSidebar, showCart, hideCart, state } = useGlobalContext()
+  const { showSidebar, showCart, hideCart, state } = useGlobalContext();
 
   return (
     <NavigatorWrapper>
@@ -25,7 +25,7 @@ const Navigator = () => {
                 <li key={idx}>
                   <a href="#">{link}</a>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
@@ -33,9 +33,9 @@ const Navigator = () => {
           <button
             onClick={() => {
               if (state.showingCart) {
-                hideCart()
+                hideCart();
               } else {
-                showCart()
+                showCart();
               }
             }}
             className="cart-btn"
@@ -50,13 +50,13 @@ const Navigator = () => {
         </div>
       </nav>
     </NavigatorWrapper>
-  )
-}
+  );
+};
 
 const NavigatorWrapper = styled.header`
   position: relative;
   padding: 2.4rem;
-  border-bottom: 1px solid hsl(var(--divider));
+  border-bottom: 1px solid black;
 
   img,
   svg {
@@ -97,7 +97,7 @@ const NavigatorWrapper = styled.header`
 
       svg,
       path {
-        fill: hsl(var(--black));
+        fill: black;
       }
 
       span {
@@ -105,9 +105,9 @@ const NavigatorWrapper = styled.header`
         position: absolute;
         top: -1rem;
         right: -1rem;
-        background-color: hsl(var(--orange));
+        background-color: orange;
         font-weight: 700;
-        color: hsl(var(--white));
+        color: white;
         border-radius: 50%;
         padding: 0.3rem 0.8rem;
         font-size: 1.1rem;
@@ -136,7 +136,7 @@ const NavigatorWrapper = styled.header`
           text-decoration: none;
           font-size: 1.5rem;
           text-transform: capitalize;
-          color: hsl(var(--dark-grayish-blue));
+          color: black;
         }
       }
     }
@@ -148,7 +148,7 @@ const NavigatorWrapper = styled.header`
         height: 3.5rem;
         width: 3.5rem;
         &:hover {
-          outline: 2px solid hsl(var(--orange));
+          outline: 2px solid orange;
         }
       }
     }
@@ -172,6 +172,6 @@ const NavigatorWrapper = styled.header`
       }
     }
   }
-`
+`;
 
-export default Navigator
+export default Navigator;

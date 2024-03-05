@@ -37,7 +37,7 @@ const SidebarWrapper = styled.aside`
   z-index: 1000;
   height: 100vh;
   transition: 0.3s ease width, 0.2s ease opacity;
-  background-color: hsl(var(--black) / 0.7);
+  background-color: black / 0.7;
   user-select: none;
   pointer-events: none;
 
@@ -45,7 +45,7 @@ const SidebarWrapper = styled.aside`
     padding: 2.5rem;
     max-width: 25rem;
     height: 100%;
-    background-color: hsl(var(--white));
+    background-color: white;
 
     .sidebar-links {
       margin-top: 5.4rem;
@@ -58,7 +58,7 @@ const SidebarWrapper = styled.aside`
       list-style: none;
 
       a {
-        color: hsl(var(--black));
+        color: black;
         text-decoration: none;
       }
     }

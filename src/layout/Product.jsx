@@ -1,10 +1,8 @@
-import styled from "styled-components"
-import ImageCarousel from "../components/ImageCarousel"
-import ImageOverlay from "../components/ImageOverlay"
-import ProductInfo from "../components/ProductInfo"
-import { productImages, productThumbnails } from "../assets/imagedata"
-import { useGlobalContext } from "../context/context"
-import { data } from "../utils/data"
+import styled from "styled-components";
+import ImageCarousel from "../components/ImageCarousel";
+import ProductInfo from "../components/ProductInfo";
+import { productImages, productThumbnails } from "../assets/imagedata";
+import { data } from "../utils/data";
 const Product = () => {
   return (
     <ProductWrapper>
@@ -14,8 +12,8 @@ const Product = () => {
       />
       <ProductInfo {...data} />
     </ProductWrapper>
-  )
-}
+  );
+};
 
 const ProductWrapper = styled.article`
   display: flex;
@@ -36,6 +34,6 @@ const ProductWrapper = styled.article`
   @media only screen and (min-width: 1200px) {
     gap: 11rem;
   }
-`
+`;
 
-export default Product
+export default Product;

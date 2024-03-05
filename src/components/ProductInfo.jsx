@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import ProductControls from "./ProductControls"
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import ProductControls from "./ProductControls";
 
 const ProductInfo = ({
   productId,
@@ -34,8 +34,8 @@ const ProductInfo = ({
       </div>
       <ProductControls productId={productId} />
     </InfoWrapper>
-  )
-}
+  );
+};
 
 const InfoWrapper = styled.section`
   padding: 2.4rem;
@@ -53,7 +53,7 @@ const InfoWrapper = styled.section`
 
     .company-name {
       font-size: 1.2rem;
-      color: hsl(var(--orange));
+      color: orange;
       margin-bottom: 2rem;
     }
 
@@ -65,7 +65,7 @@ const InfoWrapper = styled.section`
 
     .product-description {
       font-size: 1.5rem;
-      color: hsl(var(--dark-grayish-blue));
+      color: black;
       line-height: 2.5rem;
       margin-bottom: 2.4rem;
     }
@@ -84,8 +84,7 @@ const InfoWrapper = styled.section`
       }
 
       .percent {
-        color: hsl(var(--orange));
-        background-color: hsl(var(--pale-orange));
+        color: orange;
         font-size: 1.6rem;
         font-weight: 700;
         padding: 0.7rem 0.8rem;
@@ -98,7 +97,7 @@ const InfoWrapper = styled.section`
         text-decoration: line-through;
         font-size: 1.6rem;
         font-weight: 700;
-        color: hsl(var(--grayish-blue));
+        color: gray;
         grid-column: 4 / 5;
       }
     }
@@ -148,7 +147,7 @@ const InfoWrapper = styled.section`
       }
     }
   }
-`
+`;
 
 ProductInfo.propTypes = {
   companyName: PropTypes.string,
@@ -157,7 +156,7 @@ ProductInfo.propTypes = {
   productPrice: PropTypes.number,
   isOnSale: PropTypes.bool,
   salePercent: PropTypes.number,
-}
+};
 
 ProductInfo.defaultProps = {
   companyName: "N/A",
@@ -166,6 +165,6 @@ ProductInfo.defaultProps = {
   productPrice: 0,
   isOnSale: false,
   salePercent: 0,
-}
+};
 
-export default ProductInfo
+export default ProductInfo;

@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   justify-content: center;
   gap: 1.6rem;
   width: 100%;
-  background-color: hsl(var(--orange));
+  background-color: orange;
   padding: 1.9rem;
   border-radius: 1rem;
   color: hsl(var(--white));
@@ -23,7 +23,7 @@ const StyledButton = styled.button`
   font-weight: 700;
 
   &.cart {
-    box-shadow: 0px 2rem 5rem -2rem hsl(var(--orange));
+    box-shadow: 0px 2rem 5rem -2rem orange;
   }
 
   @media screen and (min-width: 768px) {

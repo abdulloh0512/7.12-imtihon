@@ -12,7 +12,7 @@ const ImageCarousel = ({ productImages, productThumbnails }) => {
     showImageOverlay,
   } = useGlobalContext()
 
-  // Carousel and Overlay refs
+
   const carouselRef = useRef(null)
   const overlayRef = useRef(null)
 
@@ -89,12 +89,8 @@ const CarouselWrapper = styled.section`
     width: 100%;
   }
 
-  .splide__track {
-    /* margin: 0 auto; */
-  }
-
   .splide__arrow {
-    background-color: hsl(var(--white));
+    background-color: white;
     opacity: 1;
     height: 4rem;
     width: 4rem;
@@ -134,7 +130,7 @@ const CarouselWrapper = styled.section`
           img {
             opacity: 0.5;
           }
-          outline: 0.2rem solid hsl(var(--orange));
+          outline: 0.2rem solid orange;
         }
 
         &:hover {

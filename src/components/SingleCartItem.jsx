@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { Delete } from "../icons"
-import { useGlobalContext } from "../context/context"
-import PropTypes from "prop-types"
+import styled from "styled-components";
+import { Delete } from "../icons";
+import { useGlobalContext } from "../context/context";
+import PropTypes from "prop-types";
 
 const SingleCartItem = ({
   productId,
@@ -12,13 +12,13 @@ const SingleCartItem = ({
   amount,
   images,
 }) => {
-  const { removeItem } = useGlobalContext()
+  const { removeItem } = useGlobalContext();
 
   const actualPrice = isOnSale
     ? (productPrice * salePercent).toFixed(2)
-    : productPrice.toFixed(2)
+    : productPrice.toFixed(2);
 
-  const totalPrice = (actualPrice * amount).toFixed(2)
+  const totalPrice = (actualPrice * amount).toFixed(2);
 
   return (
     <SingleItemWrapper>
@@ -35,8 +35,8 @@ const SingleCartItem = ({
         <Delete />
       </button>
     </SingleItemWrapper>
-  )
-}
+  );
+};
 
 const SingleItemWrapper = styled.li`
   display: flex;
@@ -53,7 +53,7 @@ const SingleItemWrapper = styled.li`
     gap: 1.6rem;
     .name {
       font-size: 1.6rem;
-      color: hsl(var(--dark-grayish-blue));
+      color: black;
       margin-bottom: 0.4rem;
     }
     .total {
@@ -65,7 +65,7 @@ const SingleItemWrapper = styled.li`
       }
     }
   }
-`
+`;
 
 SingleCartItem.propTypes = {
   productId: PropTypes.number,
@@ -74,24 +74,13 @@ SingleCartItem.propTypes = {
   amount: PropTypes.number,
   isOnSale: PropTypes.bool,
   images: PropTypes.array,
-}
+};
 
 SingleCartItem.defaultProps = {
   productPrice: 0,
   amount: 0,
   isOnSale: false,
   images: [],
-}
+};
 
-// productId: 1,
-// companyName: "Sneaker Company",
-// productName: "Fall Limited Edition Sneakers",
-// productDescription:
-//   "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-// productPrice: 250,
-// isOnSale: true,
-// salePercent: 0.5,
-// amount: 0,
-// images: productImages,
-
-export default SingleCartItem
+export default SingleCartItem;
